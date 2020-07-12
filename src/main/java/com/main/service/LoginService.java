@@ -8,8 +8,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.user.model.Users;
-import com.user.repository.UserRepository;
+import com.user.example.model.Users;
+import com.user.example.repository.UserRepository;
 import com.util.UserPasswordHashUtil;
 
 @Service
