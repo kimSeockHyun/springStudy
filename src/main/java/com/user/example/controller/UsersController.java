@@ -31,6 +31,18 @@ public class UsersController {
 		return rtnPage;
 	}
 	
+	
+	@PostMapping(value = "/login")
+	public String login(@RequestParam Map<String, String> paramMap) {
+	
+		String userId = paramMap.get("user_id");
+		String userPw = paramMap.get("user_pw");
+		
+		String rtnPage = loginService.login(userId, userPw);
+		
+		return "/login";
+	}
+	
 	@PostMapping(value = "/loginRequest")
 	public String loginRequest(@RequestParam Map<String, String> paramMap) {
 	

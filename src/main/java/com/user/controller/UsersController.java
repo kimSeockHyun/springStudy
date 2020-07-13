@@ -19,7 +19,7 @@ public class UsersController {
 	@Autowired
 	private JoinService joinService;
 	
-	@PostMapping(value = "/joinRequest")
+	@PostMapping(value = "/users/joinRequest")
 	public String joinRequest(@RequestParam Map<String, String> paramMap) throws Exception{
 		
 		String userId = paramMap.get("userId");
