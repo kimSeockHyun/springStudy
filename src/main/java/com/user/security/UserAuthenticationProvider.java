@@ -29,7 +29,7 @@ public class UserAuthenticationProvider implements org.springframework.security.
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		
 		UserDetails userDetails = new UserDetails();
-		
+//		Å×½ºÆ®
 		
 		String userId = authentication.getName();
 		String userPassword = (String) authentication.getCredentials();
