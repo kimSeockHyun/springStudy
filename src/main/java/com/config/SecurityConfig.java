@@ -31,14 +31,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/user/**").hasRole("USER")
 				.antMatchers("/admin/**").hasRole("ADMIN");					//	관리자페이지 권한부여
 		
-				//	선언하지 않은 경로는 인증된 사용자만 허용 사용할지 설정
-//				.anyRequest().authenticated()
-		
 		//	로그인
 		http.formLogin()
 				.loginPage("/login")
 				.usernameParameter("userId")
-				.passwordParameter("passWord")
+				.passwordParameter("userPassword")
 				.loginProcessingUrl("/loginRequest")
 				.successForwardUrl("/home")
 				.failureUrl("/login?error")
@@ -59,4 +56,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) {
         auth.authenticationProvider(authenticationProvider);
     }
+    
+    
 }

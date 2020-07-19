@@ -2,10 +2,16 @@ package com.user.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.main.service.LoginService;
 import com.user.service.JoinService;
@@ -41,5 +47,15 @@ public class UsersController {
 		
 		return rtnPage;
 	}
+	
+	@RequestMapping(value = "login")
+	public String login( HttpServletRequest request, HttpServletResponse response, ModelAndView mav )throws Exception {
+		
+		
+		return "login";
+	}
+	
+	
+	
 	
 }
